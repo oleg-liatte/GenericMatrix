@@ -2,8 +2,6 @@
 
 #include <stddef.h> // for size_t
 
-namespace BW
-{
 /**
    Compile-time list of values
  */
@@ -208,4 +206,3 @@ struct ConstexprListSequence<T, 0, Start>
 
 template<typename T, size_t Size, T Start = 0>
 using ConstexprListSequenceT = typename ConstexprListSequence<T, Size, Start>::type;
-} // namespace BW

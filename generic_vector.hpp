@@ -1,12 +1,10 @@
 #pragma once
 
-#include <cstdmf/constexpr_list.hpp>
+#include "constexpr_list.hpp"
 
 #include <array>
 #include <type_traits>
 
-namespace BW
-{
 /**
    Generic subvector.
 
@@ -172,7 +170,6 @@ constexpr const T& get(const GenericVector<T, N>& v) noexcept
 	static_assert(I < N, "GenericVector index out of bounds");
 	return v[I];
 }
-} // namespace BW
 
 namespace std
 {

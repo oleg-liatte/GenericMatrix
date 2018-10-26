@@ -1,11 +1,11 @@
-#include <math/generic_matrix.hpp>
+#include "generic_matrix.hpp"
 #include <catch.hpp>
 #include <atomic>
 #include <intrin.h>
 
 namespace
 {
-using Matrix = BW::GenericMatrix<int, 2, 2>;
+using Matrix = GenericMatrix<int, 2, 2>;
 using Vector = Matrix::row_type;
 
 // rotation to 90 deg CW
@@ -76,7 +76,7 @@ TEST_CASE("GenericMatrix vector transform")
 
 TEST_CASE("GenericMatrix point transform: origin")
 {
-	BW::GenericMatrix<int, 2, 3> ccw =
+	GenericMatrix<int, 2, 3> ccw =
 	{
 		0, 1,
 		-1, 0,
@@ -92,8 +92,8 @@ TEST_CASE("GenericMatrix point transform: origin")
 
 TEST_CASE("GenericMatrix point transform: pivot")
 {
-	using M = BW::GenericMatrix<int, 3, 3>;
-	using V = BW::GenericVector<int, 3>;
+	using M = GenericMatrix<int, 3, 3>;
+	using V = GenericVector<int, 3>;
 	M ccw =
 	{
 		0, 1, 0,

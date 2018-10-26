@@ -2,14 +2,11 @@
 
 #include "generic_vector.hpp"
 
-#include <cstdmf/constexpr_list.hpp>
-#include <cstdmf/debug.hpp>
+#include "constexpr_list.hpp"
 
 #include <array>
 #include <type_traits>
 
-namespace BW
-{
 /**
    Generic submatrix.
 
@@ -285,7 +282,7 @@ public:
 	constexpr GenericMatrix invert() const noexcept
 	{
 		auto det = determinant();
-		MF_ASSERT(det != row_type::ZERO_VALUE);
+		assert(det != row_type::ZERO_VALUE);
 
 		GenericMatrix out;
 		invert(out, det);
@@ -423,7 +420,6 @@ constexpr std::enable_if_t<
 	lhs = lhs * rhs;
 	return lhs;
 }
-} // namespace BW
 
 namespace std
 {
